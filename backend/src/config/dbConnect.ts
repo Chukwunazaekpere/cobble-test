@@ -8,7 +8,11 @@ const DB_URL = process.env.NODE_ENV === "development" ?
 
 const dbConnection = async() => {
     try {
-        await mongoose.connect(DB_URL);
+        await mongoose.connect(DB_URL, {
+            useCreateIndex: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         console.log("\n\t DB connection was successful.");
     } catch (error) {
         console.log("\n\t DB connection was unsuccessful.");

@@ -11,7 +11,11 @@ const DB_URL = process.env.NODE_ENV === "development" ?
     process.env.LIVE_DB;
 const dbConnection = async () => {
     try {
-        await mongoose_1.default.connect(DB_URL);
+        await mongoose_1.default.connect(DB_URL, {
+            useCreateIndex: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         console.log("\n\t DB connection was successful.");
     }
     catch (error) {

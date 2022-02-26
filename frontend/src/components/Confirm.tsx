@@ -47,7 +47,7 @@ const Confirm = (props: Props) => {
 
     const sendRequest = async() => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_REMOTE_SERVER}/rent/rent-request`, {...formDataPreview}, {
+            const response = await axios.post(`${process.env.REACT_APP_LOCAL_SERVER}/rent/rent-request`, {...formDataPreview}, {
                 headers: {
                     "Content-Type": "application/json"
                 }
